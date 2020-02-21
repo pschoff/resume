@@ -1,0 +1,579 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Peter W. Schoffelen</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3e32a4c5-a770-4ba1-829e-a46994605e76" class="page serif"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_winslow_homer_maine_coast.jpg" style="object-position:center 43.94%"/><h1 class="page-title"><strong><em>Peter W. Schoffelen</em></strong></h1></header><div class="page-body"><p id="e88bb929-8541-4486-bebf-4ad93f20b0de" class=""><em>“Reality can be beaten with enough imagination.”
+― Mark Twain</em></p><hr id="481b9178-e517-4ec9-a38f-ca00c74ccbdd"/><p id="11db447d-bbdd-44b5-9a61-bc2be574d9d4" class="">Hello! Welcome to my online Carte Vitale. </p><p id="10f64c7b-9c64-483c-89ec-97425c6dd569" class="">
+</p><h2 id="f52ee62e-d5bd-44bd-9ca1-0f5ea7ab66d6" class="">Table of Contents</h2><nav id="53068c79-080b-4085-af04-d95595437ffb" class="table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f52ee62e-d5bd-44bd-9ca1-0f5ea7ab66d6">Table of Contents</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#41ddede2-2e40-415b-8895-bd9e8bed813f">Contact</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7cd716a2-9d6d-42c9-8577-41c84446c407">Summary</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#199d4cea-743a-4655-8b33-478e09358c52">Expertise &amp; Skills</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9bd2cbef-187c-403e-a3c8-29f4d080a70a">Work Experience (Post-2015)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c7d8458d-26c7-450b-a350-0276bfba9889">Product Manager and Agile Coach</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1c1f56eb-4e10-4eef-8f78-99549071a1c5">Senior Data Analyst</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3cb864bc-b742-44d2-b9d4-05a3695c7b6a">Business Innovation CAReer Trainee</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0dba0486-0803-45d8-b555-2969944bdda2"><strong>Venture Capital Research Analyst</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#92fd2992-9bec-4501-b44e-2091cdb15636"><strong>Founding Member</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e20a0be5-7d12-49de-a50d-5eba03f250e5">Education</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d57d0ca3-61d0-4959-86b9-bbfa7464b88e"><strong>Masters of Science in Business Intelligence and Data Analytics</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#32ef4371-f8f1-47ab-b167-71a9bf665bf4"><strong>Master of Science in Public Policy and Management</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4e6bc792-693a-4e0a-9601-42c3e0860b51"><strong>Bachelor of Arts in Political Science</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8685e474-b631-48a2-8455-a89a14920d5d"><em>Certifications</em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#156cc5ff-84fa-4b14-b37a-740be6c8e065">Prosci Certified Change Practitioner</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0d3075c7-45f4-4e57-a013-0fb7992e5583">Certificate in Leadership and General Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8ac7cf60-2ce5-4cc7-861b-337d1494504d">Project Management Professional (PMP)®</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3cc5d93f-d9dd-48c6-b087-dd2fc07266f3">Certified ScrumMaster®</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e43707d8-c398-4c95-a691-fdb31a151dfb">Appendix</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1d38bcbf-6201-4e28-973e-c27993fe636e">Extended Work History (Pre-2015)</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#07297a4d-91c2-46e1-b0e1-cce5865bf87a">Coro Fellowship In Public Affairs</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#81abfd1d-3918-4b36-a2af-90f51223b49c">Philanthropic Innovation Fellow</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f15dc364-1d3e-4fef-88c4-cf6367854099">Innovation and Entrepreneurship Graduate Intern</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#c9c6386f-2427-460d-b8e5-82e1547b9580">Database Assistant</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b56f9040-6722-40cc-8adb-c33c47a0b668">Corps Member</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e8e39fcd-bfa3-410d-b7a9-02c1e8be6e95">HIV/AIDS Education Field Intern</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#fa79deb9-2355-4381-b72d-112381ebf477">Community Leader Intern</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6a3a36ce-c890-4a96-996b-077cf5842395">Head Couch</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#460fc5f7-ddba-40bd-a3ab-e21531db0e59">Public Advocate Intern</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d1a301f1-f900-4cbd-9dc4-7fecaf23d224">Extended Educational History</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8860cbb6-9555-47dc-861c-e24d55531c9f">Masters of Science in Business Intelligence and Data Analytics</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6e816c90-8e1d-4690-bd38-7b6dd0d83ad1">Master of Science in Public Policy and Management</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#93498fbc-a5cb-446b-869f-791bdb31e74c">Bachelor of Arts in Political Science</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0887257a-2928-4863-a913-2c937dc1fa19">Personality/Work style</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6cc2b80d-5e9e-4711-8708-8962a68a01ab">Myers-Briggs</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#977ee02a-27e6-4a3c-a3af-1388d865d14d">Strength Finders</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#0aab8fe7-34d2-4d7d-b82f-44bd6ce695be">DISC</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b20974f4-7ee6-4e75-90e0-1ffc7ca8aa33">Languages</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c776adfc-62fa-45aa-b557-962b569bb3b3">Places I&#x27;ve Lived</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#083f7d61-7b30-4493-a60d-09ffe2b8ef92">Outside of Work</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#69c1bdff-05a1-4e26-a84d-d942414ad66a">Thank You</a></div></nav><hr id="484e9903-916d-431f-b262-1e8359d037ea"/><h2 id="41ddede2-2e40-415b-8895-bd9e8bed813f" class="">Contact</h2><p id="2a5dd9e9-b596-4a87-82b3-14e942dfcf47" class="">Email: pschoffe@andrew.cmu.edu</p><p id="50bdecb4-e3dd-4122-a1d6-127fbb1a132e" class="">Phone: 1.609.439.6655</p><p id="0d7bc3fd-be69-4fac-9311-aa4111177e6f" class="">Pony Express: 1200 NW Marshall Street, Portland OR, 97209</p><hr id="90748ef1-7c08-4063-8968-3dff2608ced1"/><h2 id="7cd716a2-9d6d-42c9-8577-41c84446c407" class="">Summary</h2><p id="de9b53a4-fee0-44ac-bbf2-97082f87a1df" class=""><strong>REALIST-IDEALIST WHO LOVES EXPLORING NEW IDEAS</strong>, doesn’t mind taking a calculated risk, and is committed to bringing creative change wherever I may be. As someone with extensive international experience in government, private, and non-profit organizations I pull from many different perspectives to tirelessly attack the challenges in scope.</p><hr id="8888b52c-63fc-44b4-be8d-c6992f4dccbc"/><h2 id="199d4cea-743a-4655-8b33-478e09358c52" class="">Expertise &amp; Skills</h2><div id="ffe3aac6-73fb-49be-9668-eb5e6cd79777" class="column-list"><div id="fdf54d8a-33e1-41eb-8495-ead3b312dee1" style="width:50%" class="column"><p id="4e72beb8-3777-4a9f-80cb-89172f661762" class=""><strong>Areas of Expertise</strong></p><ul id="13d16eb3-354f-453a-b8b4-46fa5d675352" class="bulleted-list"><li>Leadership and innovation</li></ul><ul id="527b1882-35c0-495a-9a66-248a0614c001" class="bulleted-list"><li>Strategic thinking</li></ul><ul id="0f48b9ea-fdde-4f5d-82f0-704b16922bd2" class="bulleted-list"><li>Policy analysis</li></ul><ul id="c33f78df-b40d-4c09-81a4-41c40f8dcc29" class="bulleted-list"><li>IT implementations</li></ul><ul id="f4ef963c-ac53-4595-86d6-6a0f56069334" class="bulleted-list"><li>Project management</li></ul><ul id="4feabe23-0814-46f4-83be-2348cce15064" class="bulleted-list"><li>Startup methodology</li></ul><ul id="aff5e7f0-a879-4914-a50d-5cb12fae709c" class="bulleted-list"><li>Business analysis and process redesign</li></ul><ul id="3ccc6a62-d937-426a-aafb-edba7d266683" class="bulleted-list"><li>Data analytics and business intelligence</li></ul></div><div id="ebb7afd7-95ee-44d0-ade2-e9403fbca334" style="width:50%" class="column"><p id="aa6117e6-cc3c-486c-a48c-8b720fa1b417" class=""><strong>Technical Skills</strong></p><ul id="dbb45f47-72f1-475b-8758-9490973b7a02" class="bulleted-list"><li><strong>Innovation:</strong> Lean startup, Business Model Development, Agile, Scrum, Design Thinking</li></ul><ul id="7b4b8eba-bb54-45a3-9e7e-ee12d6124ad1" class="bulleted-list"><li><strong>Languages:</strong> Proficient SQL, Proficient R, Some Python, Some HTML, Some CSS</li></ul><ul id="dc12d3ce-a0ba-40b6-b88c-b499ff2c0d44" class="bulleted-list"><li><strong>Tools:</strong> Microsoft Excel, Tableau, Minitab, Alteryx, R Studio</li></ul><ul id="e96748b3-cb09-48ab-b7dd-b8ff68bb4e50" class="bulleted-list"><li><strong>Databases:</strong> Oracle 11g, MySQL, SQL Server</li></ul></div></div><hr id="198b7753-dc36-4901-9323-c27455c4902a"/><h2 id="9bd2cbef-187c-403e-a3c8-29f4d080a70a" class="">Work Experience (Post-2015)</h2><h3 id="c7d8458d-26c7-450b-a350-0276bfba9889" class="">Product Manager and Agile Coach</h3><p id="e999eaaa-c6be-4d4a-b954-9355cd761bd7" class=""><em>Autonomous Technology Group at Daimler AG</em></p><p id="b44a1ca9-066f-401c-8ca3-1d34c1daead2" class=""><em>Portland, OR — (March 2019 - Present)</em></p><ul id="f17089ce-6bc3-4081-891b-993a041beedf" class="bulleted-list"><li>Responsible for developing the departmental culture, maturing agile process, improving daily operations, and facilitating alignment and development of department road map.</li></ul><ul id="edde7ddf-1253-406b-9e84-3131552bcec0" class="bulleted-list"><li>Part of senior leadership team interacting with company executives (c-suite level) to deliver strategic considerations in regards to the evolution of the product development.</li></ul><ul id="04106410-71fe-47be-a034-fbb407c78442" class="bulleted-list"><li>Utilized change management to lead team through transitional period in which ~30% (4/15) of department had left prior to my arrival due to low moral; team has now grown to over 60.</li></ul><ul id="ff8ba92a-fe1f-43c9-8724-1bdac73f4e30" class="bulleted-list"><li>Implemented an agile mindset and culture through large group facilitation, training, and direct 1-1 coaching with leadership team resulting in increased comfort with ambiguity and improved collaboration with global stakeholders.</li></ul><ul id="f0fdbf20-d1f5-4b0c-ac2d-c3897a5c9263" class="bulleted-list"><li>Recruited and developed 3 direct reports leading them in implementing agile processes with each team in the department (primarily borrowing from Scrum) resulting in improved transparency, continuous delivery of value, and greater departmental stability.</li></ul><h3 id="1c1f56eb-4e10-4eef-8f78-99549071a1c5" class="">Senior Data Analyst</h3><p id="0630028a-0e6d-4e8f-8264-4da09fd49228" class=""><em>Continuous Improvement Project Management Office at Daimler AG </em></p><p id="58617b7c-0400-4cff-a9d3-ea4d37adf642" class=""><em>Portland, OR — (Jan 2018 - March 2019)</em></p><ul id="7956dffd-22e6-419a-a626-434c579a877b" class="bulleted-list"><li>Utilized R for exploratory data analysis, built data warehouses in SQL, and developed business intelligence solutions for internal end users utilizing Tableau and Alteryx.</li></ul><ul id="00d45f15-4b44-4d99-8878-8f69fdd6a9ac" class="bulleted-list"><li>Pitched to BOM the need for developing into an agile organization; green light to develop project charter and gather team for implementation.</li></ul><ul id="da1e5e2f-4cf3-46ed-ae41-b4684353fad0" class="bulleted-list"><li>Initiated Daimler Trucks first proof-of-concept development for blockchain in logistics.</li></ul><ul id="6c5574df-e825-4cb6-8cdd-af5dddfa4cb1" class="bulleted-list"><li>Designated “Expert” in Design Thinking, Agile and Scrum, and general innovation methodologies.</li></ul><ul id="b2120e46-dd91-4bb0-b787-a0d5902abe7a" class="bulleted-list"><li>Pacemaker/Scrum Master for DTNA’s first official swarm examining usage of predictive analytics for forecasting vehicle malfunctions; resulting in lessons learned that have generated the development of multiple-swarms with similar scope.</li></ul><ul id="c1301337-e009-4dd2-a2b1-1300dcc212ba" class="bulleted-list"><li>Pacemaker/Scrum Master for DTNA&#x27;s strategic vision development and one of the lead presenters for DTNA&#x27;s annual top 180 event.</li></ul><h3 id="3cb864bc-b742-44d2-b9d4-05a3695c7b6a" class="">Business Innovation CAReer Trainee</h3><p id="ee2d1701-195e-4b7e-8953-b33533060e81" class=""><em>CAReer Management Development Program  at Daimler AG, </em></p><p id="0cbee8e3-7927-4a54-99c7-95618b5b6942" class=""><em>Global — (Jan 2016 - March 2018)</em></p><p id="b1a80295-8db4-4e3c-b3c5-8e5c6a39c957" class="">Managed strategic projects and international assignments as part of leadership development program.</p><p id="be1ebb69-f4c9-4096-8949-a6337e7b4994" class=""><strong>Daimler AG, Truck Strategy (Stuttgart, DE)</strong></p><ul id="d5228f3f-9b48-44c9-83ff-4299ac2b4b86" class="bulleted-list"><li>Developed and pitched innovation concept to Truck shark tank judges winning 11/12 votes (highest total of all pitches);
+granted team to work on concept as a result.</li></ul><ul id="a4a11da2-dec9-481d-9f12-97487bfcf52c" class="bulleted-list"><li>Led team as Scrum Master in going from ideation to implementation on concept.</li></ul><ul id="d146b049-bbae-458a-ae4a-e36b7d33912a" class="bulleted-list"><li>Secured partnership with multinational infrastructure engineering firm as part of concept exploration.</li></ul><p id="004ad3d4-6c62-4f24-9bd9-a47432b2a468" class=""><strong>Mercedes-Benz Research and Development, Society and Technology Research (Sunnyvale, CA)</strong></p><ul id="2ad2bd6e-ecaa-4a15-ae88-431879abaf75" class="bulleted-list"><li>Developed research and thought leadership reports on utilization of blockchain technology in autonomous vehicles.</li></ul><ul id="56c05ad7-7a6b-45a5-8325-b25c783e8c98" class="bulleted-list"><li>Requested as speaker on blockchain technology by several executives groups from different groups (trucks, cars, financial services).</li></ul><p id="9553b9b7-1569-4c5d-ae0c-2ad7099441fb" class=""><strong>Daimler Trucks North America, Business Innovation (Portland, OR)</strong></p><ul id="3ce5fd4e-fc16-4be5-80fe-a9797a740b38" class="bulleted-list"><li>Performed rigorous quantitative / qualitative analyses related to market sizing, business model analysis, scenario analysis and sensitivity modeling to assess feasibility of innovation ideas; developed key insights from analysis including merger and acquisition analysis used by Truck Board of Management.</li></ul><ul id="cec1fc1d-fefa-4066-b602-8712d9512080" class="bulleted-list"><li>Co-taught a DTNA and University of Portland partnership MBA class on innovation strategy and design thinking.</li></ul><p id="16fef4be-3f40-4984-afd7-8ce78e175477" class=""><strong>Daimler Trucks North America, Continuous Improvement (Portland, OR)</strong></p><ul id="94ab5454-e745-483f-a4db-de3037442518" class="bulleted-list"><li>Used TOS tools and principles (process/value stream mapping, KPI development, focus groups, waste quantification, etc.) to diagnose current state of new employee onboarding at DTNA and to design desired future state.</li></ul><ul id="d381fd4c-0a26-482d-9850-98ab4fcf5dd3" class="bulleted-list"><li>Initiated implementation of new employee onboarding improvement initiatives gaining early traction through ‘quick wins’.</li></ul><h3 id="0dba0486-0803-45d8-b555-2969944bdda2" class=""><strong>Venture Capital Research Analyst</strong></h3><p id="9b54785d-2d4b-484e-9256-ad7074da8560" class=""><em>Birchemere Ventures/Sean Ammirati</em></p><p id="9eef191c-838e-4a63-ad56-a6c9852b5378" class=""><em>Pittsburgh, PA — (March 2015 - Dec 2015)</em></p><ul id="c824db15-ee45-4f36-addf-a14e5aad2b63" class="bulleted-list"><li>Researched and developed best practices for post-product market fit start-ups entering growth stage.</li></ul><ul id="68cd493f-677e-4df2-83b8-b1c1a89000d2" class="bulleted-list"><li>Lead researcher on recently published book The Science of Growth by Sean Ammirati (4.5/5 stars on Amazon).</li></ul><ul id="32ab2c78-9cff-4289-a773-9900a8140aa7" class="bulleted-list"><li>Research findings incorporated in Carnegie Bosch Institute Executive Education curriculum and used in development  of two new graduate level courses at Carnegie Mellon University.</li></ul><h3 id="92fd2992-9bec-4501-b44e-2091cdb15636" class=""><strong>Founding Member</strong></h3><p id="b692165c-37e7-45dd-9669-224cfeb77604" class=""><em>Small Change</em></p><p id="98d201cf-70e3-4621-8e11-e80f2c4b88b1" class=""><em>Pittsburgh, PA — (June 2014 - March 2015)</em></p><ul id="46fdd6fc-7ea7-4b5b-a841-d8fdf3ebd467" class="bulleted-list"><li>Led policy analysis and strategic recommendations based on policy analysis.</li></ul><ul id="dd113ec5-e2fc-4592-9e90-ce5e5d9bd9ec" class="bulleted-list"><li>Pitched for and secured $20k in seed funding and undisclosed sum of follow-up angel funding.</li></ul><ul id="c3fbd951-fb77-403f-9f8d-f9740697385b" class="bulleted-list"><li>Used Agile and Scrum to lead development of our product platform and management of internal employees and external
+vendors responsible for development work.</li></ul><ul id="3d1929a5-242e-4dd9-a352-5ce75c54a6d4" class="bulleted-list"><li>Developed first of its kind a normalized and weighted Triple-Bottom Line (people, planet, profit) metrics system to evaluate and score real estate in order to demonstrate responsible property investing.</li></ul><hr id="981be649-004b-4ada-bf15-bf6a42d3084a"/><h2 id="e20a0be5-7d12-49de-a50d-5eba03f250e5" class="">Education</h2><h3 id="d57d0ca3-61d0-4959-86b9-bbfa7464b88e" class=""><strong>Masters of Science in Business Intelligence and Data Analytics</strong></h3><p id="cc86225c-d097-44af-8a9b-6253250cc4d3" class=""><em>Carnegie Mellon University </em></p><p id="51a6b9b0-1db3-4d80-9c9c-18d2c43a706c" class=""><em>Remote — (Dec 2018 - Present)</em></p><h3 id="32ef4371-f8f1-47ab-b167-71a9bf665bf4" class=""><strong>Master of Science in Public Policy and Management</strong></h3><p id="28a02e09-be4e-4d47-a7ec-0e0e6ff61bcd" class=""><em>Carnegie Mellon University</em></p><p id="0e53108f-ac41-469a-87ae-39ec734b01fa" class=""><em>Pittsburgh, PA — (September 2012 - June 2014)</em></p><h3 id="4e6bc792-693a-4e0a-9601-42c3e0860b51" class=""><strong>Bachelor of Arts in Political Science</strong></h3><p id="f26e8573-d069-481b-891c-dc11966f5243" class=""><mark class="highlight-gray"><em>Seattle University</em></mark></p><p id="e611e8bd-ea42-471f-a141-aa4418cd61c0" class=""><mark class="highlight-gray"><em>Seattle, WA — (September 2007 - June 2011)</em></mark></p><hr id="c823b7f7-ea0b-491b-a041-6d208db9cdf6"/><h2 id="8685e474-b631-48a2-8455-a89a14920d5d" class=""><em>Certifications</em></h2><h3 id="156cc5ff-84fa-4b14-b37a-740be6c8e065" class="">Prosci Certified Change Practitioner</h3><p id="4ed2bdcf-bf31-4dc2-a211-65b845b5108a" class=""><em>Prosci Change Management, Issued April 2019</em></p><h3 id="0d3075c7-45f4-4e57-a013-0fb7992e5583" class="">Certificate in Leadership and General Management</h3><p id="ac45eeb0-1a29-41f0-9b3b-7f2b386b515e" class=""><em>European School of Management and Technology, Issued (2018)</em></p><h3 id="8ac7cf60-2ce5-4cc7-861b-337d1494504d" class="">Project Management Professional (PMP)®</h3><p id="73dbe878-545b-403b-b7d1-f779fdeac02e" class=""><em>Project Management Institute, Issued August 2016</em></p><h3 id="3cc5d93f-d9dd-48c6-b087-dd2fc07266f3" class="">Certified ScrumMaster®</h3><p id="916d6339-21d1-424a-b65b-a735eff02a13" class=""><em>Scrum Alliance, Issued December 2016</em></p><hr id="16f5a674-8722-46ba-a882-5e9e4b6f13c0"/><h1 id="e43707d8-c398-4c95-a691-fdb31a151dfb" class="">Appendix</h1><p id="cc68c969-a425-440d-bc73-dab1761cc137" class="">Functionally my Carte Vital.</p><h2 id="1d38bcbf-6201-4e28-973e-c27993fe636e" class="">Extended Work History (Pre-2015)</h2><h3 id="07297a4d-91c2-46e1-b0e1-cce5865bf87a" class="">Coro Fellowship In Public Affairs</h3><p id="0e305759-de8d-44d9-80c5-5483aa78f455" class=""><em>Coro Center for Civic Leadership</em></p><p id="79dd3a3c-33e8-4f6b-824e-5d59e9ad5e57" class=""><em>Pittsburgh, PA — (August 2013 -  June 2014)</em></p><ul id="112c4e38-3d5a-4751-b592-7ffb613940a0" class="bulleted-list"><li>Led a cross-functional team or 11 other fellows to coordinate 4 public affairs strategy development events examining community, city, state and national policy challenges; upwards of 100 attendees.</li></ul><ul id="7d0a502f-f40e-4f60-8061-9f4b7e3bfa07" class="bulleted-list"><li>Conducted interviews with prominent decision-makers and stakeholders in various industries and communities.</li></ul><h3 id="81abfd1d-3918-4b36-a2af-90f51223b49c" class="">Philanthropic Innovation Fellow</h3><p id="92eb2e0a-4053-4275-87e0-e97241a3dfc9" class=""><em>Richard King Mellon Foundation</em></p><p id="64d53458-a1eb-42e4-bdd3-8421b633bb40" class=""><em>Pittsburgh, PA — (August 2013 -  June 2014)</em></p><ul id="00c9002d-7d36-4c35-b9e7-124d9750113e" class="bulleted-list"><li>Created, analyzed, and presented strategy and rollout plan in the implementation of a resident equity ownership model and complimentary metrics system for a $20M commercial real estate development.</li></ul><ul id="95da2efe-27bc-4fce-94f9-d249ab866b48" class="bulleted-list"><li>Organized a team of leaders from multiple organizations throughout Pittsburgh to integrate resident ownership program. Expected result of 10% total equity distributed to local homeowners in vicinity of development.</li></ul><ul id="e959398e-aa5d-401c-8f27-e5dddbda7606" class="bulleted-list"><li>Contract extended from 8 weeks to 32 weeks due to extreme satisfaction with quality of work.</li></ul><h3 id="f15dc364-1d3e-4fef-88c4-cf6367854099" class="">Innovation and Entrepreneurship Graduate Intern</h3><p id="0bfb4550-9733-44ff-ae4c-fc3a945aa81d" class=""><em>Urban Redevelopment Authority</em></p><p id="0ba22929-cc36-4fc0-ab94-51e3ada9fdfc" class=""><em>Pittsburgh, PA — (May 2013 -  August 2013)</em></p><ul id="a49579e7-8138-4a09-9dee-2bee5fdc4bc0" class="bulleted-list"><li>Created economic analyses reports of 45 Pittsburgh neighborhoods using GIS software.</li></ul><ul id="0c697e2c-f598-4db6-80fe-cdd81c77c398" class="bulleted-list"><li>Assisted in the management, development, and launch of LaunchPGH.com a full service resource center for Pittsburgh entrepreneurs.</li></ul><ul id="b944afa8-67c9-4748-845a-f55e03a25a15" class="bulleted-list"><li>Attended and graduated a basics of small business seminar series learning start-up financing, budget, and legal structure basics.</li></ul><ul id="9fd25949-7c5c-4e73-9a57-7314024e91ce" class="bulleted-list"><li>Developed a stakeholder map and analysis of neighborhood leadership.</li></ul><h3 id="c9c6386f-2427-460d-b8e5-82e1547b9580" class="">Database Assistant</h3><p id="490d7de7-ed37-41dd-a44f-5fc589fbab17" class=""><em>Heinz College Alumni Relations</em></p><p id="75b3124d-5a49-4385-a330-93ead3779646" class=""><em>Pittsburgh, PA — (Summer 2012-Summer 2013)</em></p><ul id="4e9d880c-791c-482a-9731-97908f3b16c5" class="bulleted-list"><li>Customized data extraction queries for the purpose of producing reports from the Carnegie Mellon University Oracle database.</li></ul><ul id="10f7fce7-23db-498c-96cd-0b6f1bcdc869" class="bulleted-list"><li>Managed updates for over 8,000 alumni’s information through the administration of Heinz College social media websites.</li></ul><h3 id="b56f9040-6722-40cc-8adb-c33c47a0b668" class="">Corps Member</h3><p id="4222b04e-f196-4ede-b805-ba97a90d9aaa" class=""><em>AmeriCorps: City Year New York</em></p><p id="39de8475-dc42-4712-8808-db038e47ae4a" class=""><em>New York, NY — (Fall 2011 - Spring 2012)</em></p><ul id="d6de2d7a-a11c-43ed-ac9b-6c216e61fc5b" class="bulleted-list"><li>Worked with a class of at-risk 8th grade students in English, math, and truancy resulting in overall grade improvements of up to 20%.</li></ul><ul id="8e43a830-3009-4a25-b6ae-84508638ab30" class="bulleted-list"><li>Managed and trained a diverse team of 10 colleagues to develop and maintain local business and community relations for the purpose of fundraising.</li></ul><ul id="eb3f89bb-5131-479b-8ee6-7c52b9e95cbe" class="bulleted-list"><li>Raised over $1,500 for ten events, of 100+ people, aimed at strengthening the community by emphasizing education.</li></ul><ul id="5b6722e9-0d8f-4c6c-a8e1-00e65be93645" class="bulleted-list"><li>Led a daily three-hour after-school program for over 70 K-8th graders, mentoring in areas such as academics, leadership, and healthy living.</li></ul><ul id="75a3aba8-1010-4424-aaea-ba3ce53c36d4" class="bulleted-list"><li>Coordinated logistics for the largest ever (~150 volunteers) community service day for City Year Queens; Activities included painting, landscaping, light construction, and block party.</li></ul><h3 id="e8e39fcd-bfa3-410d-b7a9-02c1e8be6e95" class="">HIV/AIDS Education Field Intern</h3><p id="403d1b41-edcd-4299-83e0-0ca802feec71" class=""><em>Grassroots Soccer</em></p><p id="4aa9a0b4-3439-4798-8789-30178264469d" class=""><em>Kimberley, South Africa — (Winter 2010 - Spring 2011)</em></p><ul id="262b9cab-727b-4f86-9cd1-7247bf377e3b" class="bulleted-list"><li>Facilitated the planning and execution in Training of Coaches (ToC), resulting in 60 coaches trained (tripling our number of coaches and therefore our curriculum delivery) during three Training seminars.</li></ul><ul id="dbd3af89-2c40-4adc-aea5-c29527cc034b" class="bulleted-list"><li>Conducted performance evaluation field visits of our coaches during training probationary period, grading their curriculum delivery and providing on site feedback of curriculum delivery; resulted in all coaches achieving a passing score.</li></ul><ul id="5569b7f6-d6bd-44a1-9856-25495b3c5439" class="bulleted-list"><li>Managed logistics for the ToC, budgeting and negotiating to secure venue, housing, meals, and transportation for 25 people over a week.</li></ul><ul id="d5bc7554-d26b-4c68-91ea-b44c426999f3" class="bulleted-list"><li>Created and implemented two contracts holding coaches more accountable for GRS loaned materials resulting in $6,000 saved; Now adopted as permanent practice.</li></ul><ul id="32b7c15f-2fae-4d8b-b1ae-88abee5d487a" class="bulleted-list"><li>Initiated the implementation of a direct deposit payment system resulting in time, money, and fuel saved from expediting and expediting payments through the new system.</li></ul><h3 id="fa79deb9-2355-4381-b72d-112381ebf477" class="">Community Leader Intern</h3><p id="80cc44b8-e482-47b0-bc98-f94642170417" class=""><em>Washington State Democrats, Patty Murray Campaign</em></p><p id="cac0ec26-b3b1-44de-a005-12fbf8fbff5b" class=""><em>Seattle, WA — (Summer 2010 - Fall 2010)</em></p><ul id="c8754159-11a4-41c7-8903-ae1fefd02a27" class="bulleted-list"><li>Supervised and managed up to 20 campaign volunteers while also conducting training and scheduling.</li></ul><ul id="7b4d413c-05cb-49da-a73f-541c3ff3c9ab" class="bulleted-list"><li>Conducted ~300 cold calls or ~200 doors visits daily and successfully recruited over 50 campaign volunteers.</li></ul><ul id="614e4015-ec9a-4d47-a153-a7fa6614c216" class="bulleted-list"><li>Preformed data entry and analysis in excel resulting in monthly quotas for calls and door visits.</li></ul><h3 id="6a3a36ce-c890-4a96-996b-077cf5842395" class="">Head Couch</h3><p id="28cc09db-8324-4324-9384-813e4a42afe7" class=""><em>Central Seattle Boys Lacrosse</em></p><p id="2f95bd17-682d-436c-b8b0-fd967252ec16" class=""><em>Seattle, WA — (Winter 2008 - Spring 2008 and Winter 2009 - Spring 2009)</em></p><ul id="2c18e82f-ba45-4944-951e-5d4eabbf3e01" class="bulleted-list"><li>Promoted from 5-6th grade coach to 7-8th grade coach in second year.</li></ul><ul id="b107873a-5819-478b-a62f-a64208f8b4a4" class="bulleted-list"><li>Created four 2 hour Practice plans a week and game plans including all players no matter what skill level.</li></ul><ul id="a7f577aa-f0c9-4947-91ec-5cfe7457061d" class="bulleted-list"><li>Worked with 50+ beginner and intermediary players resulting in 20 making varsity lacrosse their freshman year of high school.</li></ul><ul id="2970721a-de23-435c-aced-fdc4f6d61e05" class="bulleted-list"><li>Designed prevention method to preemptively address “sideline parent intervention.”</li></ul><h3 id="460fc5f7-ddba-40bd-a3ab-e21531db0e59" class="">Public Advocate Intern</h3><p id="6091f4ce-a18b-4a14-9e4c-89840b544009" class=""><em>New Jersey Public Advocate</em></p><p id="8c2cbcb1-b23b-4e67-b3d3-cc9af20ffc1c" class=""><em>Trenton, NJ — (Summer 2008 - Fall 2008 and Summer 2009 - Fall 2009)</em></p><ul id="8660cdc6-c48c-48b6-89c7-a915af91ea75" class="bulleted-list"><li>Interviewed over 25 people, many with developmental disabilities, in order to document dis/satisfaction with state services.</li></ul><ul id="7781210e-4f55-4e36-a911-0f5760876033" class="bulleted-list"><li>Filmed and edited video footage to create 5 public service announcements</li></ul><ul id="b84f7785-5391-4cdd-bf24-c513e0c3530e" class="bulleted-list"><li>Wrote 30 press releases for Public Advocate website.</li></ul><ul id="0ac25136-bf71-4556-8b61-a71eb15a4703" class="bulleted-list"><li>During second summer given responsibility of managing daily website updates, including posting press releases, photos, videos, and editing outdated pages.</li></ul><ul id="da92787a-96ae-49d7-a537-76f69d129227" class="bulleted-list"><li>Assisted in event coordination and execution for 3 Model Lead Safe City initiative signings.</li></ul><h2 id="d1a301f1-f900-4cbd-9dc4-7fecaf23d224" class="">Extended Educational History</h2><h3 id="8860cbb6-9555-47dc-861c-e24d55531c9f" class="">Masters of Science in Business Intelligence and Data Analytics</h3><p id="02182030-ee63-4ea8-a6c4-9f8eb55ab3bc" class=""><em>Carnegie Mellon University: Heinz College</em></p><ul id="c3d699a0-1825-4dfc-8b1d-9cf5fc4ade1c" class="bulleted-list"><li>GPA: 3.64/4.30</li></ul><ul id="319bd53d-c37b-4edd-ae57-f3222360896c" class="bulleted-list"><li>Awards: Merit Scholarship, Give-a-Year Scholarship Recipient, Coro Fellow Scholar.</li></ul><ul id="38e211db-e968-4ebe-aaa0-cbb4ecb5a89f" class="toggle"><li><details open=""><summary>Course Work</summary><ul id="44d18d2c-5deb-4c68-9876-f519cf9ef20a" class="bulleted-list"><li>Database Management</li></ul><ul id="857f53e8-633a-470d-8e79-5a3c18b516ac" class="bulleted-list"><li>Data Warehousing</li></ul><ul id="61e8ff67-72dd-4d35-b9a0-16bb39f3ea05" class="bulleted-list"><li>Exploring and Visualizing Data with R</li></ul><ul id="da89d71c-0ec9-4b44-aee6-46084c31cfb8" class="bulleted-list"><li>Tech Startup Market Discovery</li></ul><ul id="baac39b7-6b9c-448e-9c44-84f1b7ca262f" class="bulleted-list"><li>Programming R for Analytics</li></ul><ul id="b6cd62b2-b087-4930-860a-721c42b624b3" class="bulleted-list"><li>Privacy in the Digital Age</li></ul><ul id="76a0dcfa-12f5-42e3-9aac-7783e45e00b6" class="bulleted-list"><li>Data Mining</li></ul></details></li></ul><h3 id="6e816c90-8e1d-4690-bd38-7b6dd0d83ad1" class="">Master of Science in Public Policy and Management</h3><p id="67fff8cd-5aa2-4ad2-8abd-ff8c057dd3e7" class=""><em>Carnegie Mellon University: Heinz College</em></p><ul id="d2f217b5-f339-4fc7-a58b-13b2299df500" class="bulleted-list"><li>GPA: 3.64/4.30</li></ul><ul id="5b7d2e99-d2bd-4441-af13-ed5ae5ba3c42" class="bulleted-list"><li>Awards: Merit Scholarship, Give-a-Year Scholarship Recipient, Idea Lab Social Innovation Incubator.</li></ul><ul id="fd78c5e4-e510-4fa3-aaa6-549e804453d5" class="toggle"><li><details open=""><summary>Course Work</summary><ul id="f3ead035-b897-4103-8a98-982d0c9a11d9" class="bulleted-list"><li>Negotiation</li></ul><ul id="59ccfaab-ac98-47db-9907-24a4dac76891" class="bulleted-list"><li>Systems Synthesis</li></ul><ul id="1bc550f8-5b1e-40f5-a4cc-198a0e990146" class="bulleted-list"><li>Social Innovation Incubator</li></ul><ul id="bcf71844-8f40-4f8a-8189-3429d470da51" class="bulleted-list"><li>Quantitative Fundamentals</li></ul><ul id="adc0209c-c528-4b30-a23a-9dd610cac192" class="bulleted-list"><li>Applied Economic Analysis</li></ul><ul id="7709d4c1-f27e-4102-9bfb-d8fcc6c16415" class="bulleted-list"><li>Empirical Methods for Public Policy and Management (Statistics), </li></ul><ul id="da94e972-74da-4039-83af-3a2585a65756" class="bulleted-list"><li>Strategic Presentation Skills, </li></ul><ul id="b8ba3e53-608f-41da-86dd-af614692d637" class="bulleted-list"><li>Intro to Database Management</li></ul><ul id="ad557bcf-8d02-43df-b916-77de11a56740" class="bulleted-list"><li>Organizational Design and Implementation </li></ul><ul id="3b54fe79-a387-491a-ae43-e85bd58b4048" class="bulleted-list"><li>Professional Writing</li></ul><ul id="254e4189-866b-414e-847e-b46b7d8ede87" class="bulleted-list"><li>Global E-Business Strategy</li></ul><ul id="c8005e13-dad0-48d3-ba56-6585b7819e93" class="bulleted-list"><li>Policy and Politics International Perspective </li></ul><ul id="3a172abe-b717-4b02-bcdf-1c7f9947c51a" class="bulleted-list"><li>Management Science I &amp; II </li></ul><ul id="e82f95c6-bdba-4b30-924f-79f341d679fa" class="bulleted-list"><li>Financial Analysis </li></ul><ul id="54bd48a0-60e9-4dce-8897-e763d0c3e580" class="bulleted-list"><li>Urban Development</li></ul><ul id="9cdb5576-9f5e-403a-bccc-dd802726b9b7" class="bulleted-list"><li>Real Estate Development</li></ul><ul id="34be8963-a0d8-4a7d-8573-c5393fd36be0" class="bulleted-list"><li>Economics of International Development </li></ul><ul id="cd9e2ec7-4f8d-44b5-83ff-7ab397bad45e" class="bulleted-list"><li>Lean Entrepreneurship, </li></ul><ul id="8d754acd-9c29-4428-bf0d-855d9c90aba4" class="bulleted-list"><li>Creating results oriented programing (Program Evaluation), </li></ul><ul id="8c774cb4-58ce-4fc4-a689-acc4dcff33a8" class="bulleted-list"><li>Independent Study: The Science of Growth</li></ul></details></li></ul><h3 id="93498fbc-a5cb-446b-869f-791bdb31e74c" class="">Bachelor of Arts in Political Science</h3><p id="9b5f4f30-973c-4222-ba65-e1826b464bef" class=""><em>Seattle University: College of Arts and Sciences</em></p><ul id="f4788f66-36b8-4ae8-91f9-f766e917e936" class="bulleted-list"><li>GPA: 3.577 /4.00</li></ul><ul id="46e02c3b-1562-41be-aad3-f2207568120e" class="bulleted-list"><li>Awards: Graduated Cum Laude, Dean’s List, President’s List, selected for International Development Internship Program.</li></ul><ul id="63fcd91c-c829-4fa5-a51f-891cc7ae2398" class="toggle"><li><details open=""><summary>Course Work (Major Specific)</summary><ul id="db90da1c-0f3b-499d-a77b-0eba661fd176" class="bulleted-list"><li>Micro Economics</li></ul><ul id="0a77bec9-8e0c-420d-aff6-c7e0e8184d74" class="bulleted-list"><li>Macro Economics</li></ul><ul id="132abfc5-f7bb-402c-a19d-9d0e7c5451fc" class="bulleted-list"><li>Third World Politics</li></ul><ul id="24a8efd1-e3fc-4eaf-8650-facd0d4ef613" class="bulleted-list"><li>Political Theory</li></ul><ul id="a397585e-64e2-4e46-9e93-7ea0653c4828" class="bulleted-list"><li>International Politics</li></ul><ul id="018284f0-1fcd-4256-a155-86eb7a50b975" class="bulleted-list"><li>Comparing Nations</li></ul><ul id="b88b324e-eca4-4cae-a7e9-3de852ed7126" class="bulleted-list"><li>Policy Process</li></ul><ul id="38ea2e90-1823-48a5-9f2f-c53bd5fdbbd3" class="bulleted-list"><li>Human Prospect</li></ul><ul id="55c0761a-904f-4d51-9b41-d433627c37b2" class="bulleted-list"><li>Global Conflict And Cooperation</li></ul><ul id="e003a66b-65af-4206-b016-6628a4750765" class="bulleted-list"><li>Comparative Democratization</li></ul><ul id="2d729f54-014b-46d0-b869-3f7b4c9c9f6f" class="bulleted-list"><li>United States Foreign Policy</li></ul><ul id="7501447c-7ba2-445f-8591-fbce90fc09fa" class="bulleted-list"><li>Constitutional Law</li></ul><ul id="9ff91b00-463a-4a6f-872b-ba10b9eab22e" class="bulleted-list"><li>International Economics And Business Decisions</li></ul><ul id="c55a2960-e45e-4542-9d18-ab168debdd3e" class="bulleted-list"><li>Evolving Presidency</li></ul><ul id="de469666-7f82-47c4-9f1c-f0ee6bf2d0e9" class="bulleted-list"><li>Social Policy: US &amp; Europe</li></ul><ul id="14d83e19-2a63-4b05-baca-fe0430116972" class="bulleted-list"><li>International Political Economy </li></ul><ul id="b86b8d39-b2e3-455c-9d92-f9c4086e239a" class="bulleted-list"><li>International Development Economics Field Practicum And Seminar</li></ul></details></li></ul><ul id="469a5858-fb82-4b45-bd95-c973d76c8e99" class="toggle"><li><details open=""><summary>Course Work (Core Requirements)</summary><ul id="41f09f64-b0d8-42f1-8693-93d3ef33d4da" class="bulleted-list"><li>French I, II, and III</li></ul><ul id="111ac9d6-9c96-42f6-9fdd-ba164cf5b207" class="bulleted-list"><li>College Writing</li></ul><ul id="9b0a821c-bedb-4451-ad48-fbb8929904fb" class="bulleted-list"><li>Intro to Literature</li></ul><ul id="e9a68b79-a5d6-4599-8b60-acc116c0f2f0" class="bulleted-list"><li>Studies in Modern Civilization</li></ul><ul id="8c02f6ff-be63-4022-8682-24eb3c66fc92" class="bulleted-list"><li>Origins of Western Civilization</li></ul><ul id="49dc72a0-3f8d-4582-a4a4-54b643cec085" class="bulleted-list"><li>College Algebra</li></ul><ul id="a8a6b5a6-facb-48b7-9bfb-38a5378db6a0" class="bulleted-list"><li>College Biology</li></ul><ul id="58250372-9fb8-4ee2-b0b7-51ad5120950f" class="bulleted-list"><li>Intro to Psychology</li></ul><ul id="8ac033ec-b616-4510-87b0-2d32cfb7f8cc" class="bulleted-list"><li>Intro to Philosophy and Critical Thinking</li></ul><ul id="7fc6a7a1-1570-4b3b-b599-4539535b1016" class="bulleted-list"><li>Philosophy of the Human Person</li></ul><ul id="85c055cb-8f2e-431e-8c41-d9d5097f66ea" class="bulleted-list"><li>Ethics</li></ul><ul id="52a57845-2e8c-48e3-89da-0042d099bdf8" class="bulleted-list"><li>African-American Religious Experience</li></ul><ul id="b79591d7-b6d8-4351-83fa-fa3f75360bd1" class="bulleted-list"><li>Hollywood Jesus</li></ul><ul id="0a4e5166-21e2-44fa-8623-8c32068befef" class="bulleted-list"><li>Experiencing Theater</li></ul><p id="d8c40682-4ba9-49b4-8714-bb8065257a99" class="">
+</p></details></li></ul><h2 id="0887257a-2928-4863-a913-2c937dc1fa19" class="">Personality/Work style</h2><h3 id="6cc2b80d-5e9e-4711-8708-8962a68a01ab" class="">Myers-Briggs</h3><p id="8c815a98-36ad-4b41-ac16-4a1519637b16" class="">Assessments have always been paper based so no fancy PDF to share but depending on the day I have gotten either ENTJ or INTJ below are links to descriptions of both</p><p id="2714a10f-472e-43bf-bf07-9da7e37ffcdb" class=""><strong>INTJ:</strong> <a href="https://www.truity.com/personality-type/INTJ">https://www.truity.com/personality-type/INTJ</a></p><p id="9171dfb6-dfbf-4481-ad6b-c8b593b3a768" class=""><strong>ENTJ: </strong><strong><a href="https://www.truity.com/personality-type/ENTJ">https://www.truity.com/personality-type/ENTJ</a></strong></p><h3 id="977ee02a-27e6-4a3c-a3af-1388d865d14d" class="">Strength Finders</h3><figure id="bc714451-259e-42e7-bebe-4cb643376511"><div class="source"><a href="Peter%20W%20Schoffelen/Schoffelen_Strength_Finder_2.0_Report.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/52efd48e-3539-4523-b715-e48f204b7a8f/Schoffelen_Strength_Finder_2.0_Report.pdf</a></div></figure><h3 id="0aab8fe7-34d2-4d7d-b82f-44bd6ce695be" class="">DISC</h3><p id="aef43e26-8a14-45f3-a24b-363c927bc232" class="">You get two here! One from 2016 and one from 2017</p><p id="8564a32d-227d-4716-a4bb-98acc5469a2b" class=""><strong>2017</strong></p><figure id="9193a539-4e24-43fe-a873-284c5c90e889"><div class="source"><a href="Peter%20W%20Schoffelen/Schoffelen_Peter_DISC_(002).pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42f7e890-7f42-4592-955f-9b6d62068678/Schoffelen_Peter_DISC_(002).pdf</a></div></figure><p id="9189f0ad-48f0-47fd-8774-56b77066fe9b" class=""><strong>2016</strong></p><figure id="d35feda6-14c9-433d-afda-e76b304d4082"><div class="source"><a href="Peter%20W%20Schoffelen/Schoffelen_DiSC.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf1aa262-eaa2-464f-821e-e8b3d3bcc406/Schoffelen_DiSC.pdf</a></div></figure><h2 id="b20974f4-7ee6-4e75-90e0-1ffc7ca8aa33" class="">Languages</h2><p id="733ea937-7521-4554-a648-171f481adaab" class=""><strong>English:</strong> English is my Native language</p><p id="6c4d426b-8d20-4cf8-b312-ffd414550fc7" class=""><strong>French: </strong>Je parle un peu de français </p><h2 id="c776adfc-62fa-45aa-b557-962b569bb3b3" class="">Places I&#x27;ve Lived</h2><p id="4b5afc53-fed2-4552-aa16-9c03ba5b5ed2" class="">Coming Soon!</p><h2 id="083f7d61-7b30-4493-a60d-09ffe2b8ef92" class="">Outside of Work</h2><p id="86d06a8b-9f92-4fd8-a8ef-6a3ff20bf882" class="">Coming Soon!</p><h2 id="69c1bdff-05a1-4e26-a84d-d942414ad66a" class="">Thank You</h2><p id="fb00a84f-4067-4f38-91ff-a48781b4c6ca" class="">Wow! You made it the end of this documentation about me. For that I must thank you for taking the time to learn more about myself. If you would like the chance to discuss my experiences with me in more detail please don&#x27;t hesitate to reach out: <a href="mailto:pschoffe@andrew.cmu.edu"><strong>pschoffe@andrew.cmu.edu</strong></a></p><p id="a3f73172-0832-4d10-8e3a-03aca12952e5" class="">
+</p><p id="3b8dcf46-1f9a-4bfb-befe-abdbf9908df1" class="">Made with 🖤 in Portland</p><p id="ef1eb06c-ccef-4c9b-94d4-31ccd61e887c" class="">
+</p><p id="5a7d6393-fa53-4852-8994-4ac7d674625c" class="">
+</p><p id="d9be1b1b-9f1e-45f9-a6ad-199e332232ab" class="">
+</p><p id="822303fe-23fb-4994-82f8-ec918722d07f" class="">
+</p><p id="d7fcfdde-8732-4b26-9435-1fb3085e3d8b" class="">
+</p><p id="82de1f27-94de-472c-a86d-395f93cf3092" class="">
+</p><p id="e67d50af-6fff-4a7a-941e-bb275e0f9bc3" class="">
+</p><p id="8abb557e-0ea3-41b6-86f7-d48b57d7640d" class="">
+</p></div></article></body></html>
